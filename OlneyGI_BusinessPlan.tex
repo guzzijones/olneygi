@@ -1,0 +1,695 @@
+\documentclass[11pt,letterpaper]{article}
+
+% ── PACKAGES ──────────────────────────────────────────────────────────
+\usepackage[margin=1.1in, top=1.2in, bottom=1.2in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage{mdframed}
+\usepackage[most]{tcolorbox}
+\usepackage{ragged2e}
+\usepackage{calc}
+\usepackage{needspace}
+
+% ── COLORS ─────────────────────────────────────────────────────────────
+\definecolor{navy}{HTML}{1B3A6B}
+\definecolor{teal}{HTML}{0D7377}
+\definecolor{lightblue}{HTML}{D6E8F5}
+\definecolor{midblueh}{HTML}{2E6DA4}
+\definecolor{lightgray}{HTML}{F5F7FA}
+\definecolor{midgray}{HTML}{CCCCCC}
+\definecolor{darkgray}{HTML}{444444}
+\definecolor{rowshade}{HTML}{EEF4FA}
+\definecolor{totalrow}{HTML}{C8DFF2}
+
+% ── HYPERREF ───────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  linkcolor=teal,
+  urlcolor=teal,
+  pdftitle={Olney GI Associates LLC - Business Plan},
+  pdfauthor={Owner},
+  pdfsubject={SBA 7(a) Loan Application}
+}
+
+% ── SECTION FORMATTING ────────────────────────────────────────────────
+\titleformat{\section}
+  {\color{navy}\Large\bfseries}
+  {\thesection.}{0.6em}{}
+  [\color{teal}\titlerule]
+
+\titleformat{\subsection}
+  {\color{teal}\large\bfseries}
+  {\thesubsection}{0.6em}{}
+
+\titleformat{\subsubsection}
+  {\color{darkgray}\normalsize\bfseries}
+  {}{0em}{}
+
+\titlespacing{\section}{0pt}{18pt}{8pt}
+\titlespacing{\subsection}{0pt}{12pt}{4pt}
+\titlespacing{\subsubsection}{0pt}{8pt}{2pt}
+
+% ── HEADER / FOOTER ───────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{teal}\hrule width\headwidth height\headrulewidth}
+\renewcommand{\footrule}{\color{teal}\hrule width\headwidth height\footrulewidth}
+\fancyhead[L]{\small\color{darkgray}Olney GI Associates, LLC \textemdash\ Business Plan}
+\fancyhead[R]{\small\color{darkgray}Concierge + Commercial Insurance Model}
+\fancyfoot[L]{\small\color{darkgray}\textit{Confidential --- SBA Loan Application Use Only}}
+\fancyfoot[R]{\small\color{darkgray}Page \thepage}
+
+% ── LIST STYLING ──────────────────────────────────────────────────────
+\setlist[itemize]{leftmargin=1.4em, itemsep=3pt, topsep=4pt, parsep=0pt}
+\setlist[itemize,1]{label=\color{teal}$\bullet$}
+
+% ── TCOLORBOX STYLES ──────────────────────────────────────────────────
+\newtcolorbox{highlightbox}{
+  colback=lightblue, colframe=teal, boxrule=0.8pt,
+  arc=3pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  breakable
+}
+
+\newtcolorbox{missionbox}{
+  colback=lightblue!40, colframe=navy, boxrule=1pt,
+  arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt,
+  breakable
+}
+
+% ── TABLE HELPERS ─────────────────────────────────────────────────────
+\newcommand{\thead}[1]{\cellcolor{navy}\color{white}\bfseries\small #1}
+\newcommand{\theadsub}[1]{\cellcolor{midblueh}\color{white}\bfseries\small #1}
+\newcommand{\trow}{\rowcolor{rowshade}}
+\newcommand{\ttotalrow}{\rowcolor{totalrow}}
+
+\renewcommand{\arraystretch}{1.4}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ══════════════════════════════════════════════════════════════════════
+%  COVER PAGE
+% ══════════════════════════════════════════════════════════════════════
+\thispagestyle{empty}
+\begin{center}
+
+\vspace*{1.5cm}
+
+{\color{navy}\fontsize{40}{48}\selectfont\bfseries BUSINESS PLAN}
+
+\vspace{0.4cm}
+{\color{teal}\rule{\linewidth}{2.5pt}}
+\vspace{0.5cm}
+
+{\color{teal}\fontsize{26}{32}\selectfont\bfseries Olney GI Associates, LLC}
+
+\vspace{0.3cm}
+{\color{darkgray}\Large\bfseries Concierge Membership + Commercial Insurance}\\[6pt]
+{\color{darkgray}\large Gastroenterology Practice}
+
+\vspace{0.2cm}
+{\color{darkgray}\normalsize Olney, Maryland 20832 \textemdash\ Montgomery County}
+
+\vspace{1.2cm}
+{\color{navy}\rule{\linewidth}{1pt}}
+\vspace{0.8cm}
+
+{\normalsize\color{darkgray}Prepared by:}\\[8pt]
+{\Large\bfseries\color{navy}{[Your Full Name], MSN, APRN, FNP-C}}\\[5pt]
+{\normalsize\color{darkgray}Owner, Nurse Practitioner \& Clinical Director}\\[4pt]
+{\normalsize\color{darkgray}{[Phone Number]} \quad|\quad {[Email Address]}}
+
+\vspace{1.2cm}
+
+\begin{tcolorbox}[colback=teal!10, colframe=teal, boxrule=1pt,
+                  arc=4pt, width=0.65\linewidth, halign=center,
+                  left=12pt, right=12pt, top=10pt, bottom=10pt]
+  {\Large\bfseries\color{navy} SBA 7(a) Loan Request: \$493,400}\\[6pt]
+  {\normalsize\color{darkgray} Date: May 2026}
+\end{tcolorbox}
+
+\vspace{1.4cm}
+{\color{navy}\rule{\linewidth}{1pt}}
+\vspace{0.4cm}
+
+{\small\color{darkgray}\textit{CONFIDENTIAL \textemdash\ For Financial Institution and SBA Use Only}}
+
+\end{center}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+%  TABLE OF CONTENTS
+% ══════════════════════════════════════════════════════════════════════
+\renewcommand{\contentsname}{\color{navy}Table of Contents}
+\tableofcontents
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Executive Summary}
+% ══════════════════════════════════════════════════════════════════════
+
+Olney GI Associates, LLC is a new gastroenterology specialty practice to be established in Olney, Maryland (Montgomery County), owned and led by \textbf{[Owner Name], MSN, APRN}, a Maryland-licensed Nurse Practitioner operating under the \textit{Maryland Nurse Practitioner Full Practice Authority Act (2015)}. The practice will operate a dual-revenue model combining a \textbf{private-pay concierge membership program} with \textbf{commercial insurance billing} beginning in Month~6 --- delivering immediate cash flow from Day~1 while building a growing insured patient panel.
+
+\medskip
+The model is designed to be the most financially resilient structure available to a new specialty practice. Membership fees provide predictable recurring revenue that bridges the commercial insurance credentialing period, and by the time insurance billing activates, the practice already has an established and loyal patient base. Montgomery County --- one of the wealthiest and most densely populated counties in the United States --- is ideally suited for this model.
+
+\medskip
+We are requesting an \textbf{SBA 7(a) loan of \$493,400} to fund all startup costs and a 12-month operating reserve. The practice is projected to reach break-even in Year~2 and generate net income exceeding \$500,000 by Year~3.
+
+\subsection*{Key Highlights}
+
+\begin{highlightbox}
+\begin{itemize}
+  \item \textbf{Revenue Model:} Concierge membership fees + commercial insurance billing (dual stream)
+  \item \textbf{Legal Authority:} Maryland NP Full Practice Authority Act --- NP-owned practice fully authorized
+  \item \textbf{Immediate Revenue:} Concierge memberships generate cash from Day~1 --- no credentialing wait
+  \item \textbf{Insurance Activation:} Month~6 (CareFirst, Aetna, United Healthcare, Cigna)
+  \item \textbf{Team:} NP Owner + Physician Partner/Statutory Mentor + Care Coordinator
+  \item \textbf{SBA 7(a) Loan Request:} \$493,400
+  \item \textbf{Year 1 Revenue:} \$161,400 \quad|\quad \textbf{Year 3:} \$1,232,400 \quad|\quad \textbf{Year 4:} \$1,653,300
+  \item \textbf{Projected Break-Even:} Year~2 (Month 18--22)
+  \item \textbf{Year 4 Net Income:} \$858,919
+\end{itemize}
+\end{highlightbox}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Business Description}
+% ══════════════════════════════════════════════════════════════════════
+
+\subsection{Practice Overview}
+
+Olney GI Associates, LLC will be organized as a Limited Liability Company under Maryland law and will operate as a for-profit outpatient gastroenterology clinic in Olney, Maryland. The practice will offer comprehensive GI and hepatology services to adult patients in Montgomery County and surrounding areas.
+
+Olney is a rapidly growing, affluent suburban community with no currently operating independent GI practice. The nearest GI specialty options require patients to travel to Rockville or Bethesda, creating a clear unmet demand that this practice is positioned to fill.
+
+\subsection{Mission Statement}
+
+\begin{missionbox}
+\textit{To deliver exceptional, personalized gastroenterology care to the residents of Montgomery County --- combining the access and attention of concierge medicine with the broad availability of commercial insurance acceptance --- so that every patient receives the GI care they need, on their schedule.}
+\end{missionbox}
+
+\subsection{Legal Structure \& Ownership}
+
+\begin{itemize}
+  \item \textbf{Owner:} [Owner Name], MSN, APRN --- 100\% Owner and Managing Member
+  \item \textbf{Business Structure:} Maryland Limited Liability Company (LLC)
+  \item \textbf{Federal EIN:} To be obtained upon LLC formation
+  \item \textbf{Individual NPI \#:} [Owner NPI]
+  \item \textbf{Organization NPI \#:} To be obtained
+  \item \textbf{Maryland NP License \#:} [License Number] --- Active, unrestricted
+  \item \textbf{DEA License \#:} [Number] --- Active
+\end{itemize}
+
+Per the Maryland Nurse Practitioner Full Practice Authority Act, new NP applicants must maintain a mentoring relationship with a physician or experienced NP for 18 months. Dr.~[Physician Name] will serve as both the clinical associate and the required statutory mentor.
+
+\subsection{The Dual Revenue Model}
+
+\subsubsection{Stream 1 --- Concierge Membership (Active from Day 1)}
+
+Patients enroll in an annual concierge membership at \textbf{\$2,400/year} (\$200/month). Membership provides premium \textit{access} benefits not covered by commercial insurance: same-day and next-day scheduling, 45--60 minute appointments, direct provider text/email messaging, unlimited telehealth follow-up, and a personalized annual GI wellness assessment. Insured members also have their clinical visits billed to their commercial insurance. The membership fee covers only the access and coordination services --- not clinical services billed to insurance.
+
+\subsubsection{Stream 2 --- Commercial Insurance Billing (Active from Month 6)}
+
+Beginning in Month~6, the practice accepts commercially insured patients on a standard appointment basis. These patients do not pay a membership fee. Target payers: CareFirst BlueCross BlueShield of Maryland, Aetna, United Healthcare, and Cigna.
+
+\medskip
+\textbf{Legal Note:} All membership agreements will be reviewed by a qualified healthcare attorney prior to launch to ensure compliance with applicable insurance regulations. This dual-billing structure is widely used by concierge practices nationwide and is legally sound when properly documented.
+
+\subsection{Patient Types \& Fee Structure}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\bfseries\small}p{3.0cm}|>{\small}X|>{\small}p{2.8cm}|>{\small}p{2.0cm}|}
+\hline
+\thead{Patient Type} & \thead{Membership Fee} & \thead{Insurance Billed?} & \thead{Visit Fee} \\
+\hline
+\trow Concierge Member (insured) & \$2,400/yr (\$200/mo) & Yes --- commercial & Co-pay only \\
+Concierge Member (self-pay) & \$2,400/yr (\$200/mo) & No & \$250/visit \\
+\trow Insurance-Only (Mo.\ 6+) & None & Yes --- commercial & Co-pay only \\
+Self-Pay / Uninsured & None & No & \$275/visit \\
+\hline
+\end{tabularx}
+\vspace{4pt}
+
+\textit{\small *Founding Member rate of \$1,800/year (\$150/month) offered to the first 60 members.}
+
+\subsection{Services Offered}
+
+\begin{itemize}
+  \item GERD, acid reflux, and esophageal disease management
+  \item Irritable Bowel Syndrome (IBS): diagnosis, dietary management, medication optimization
+  \item Inflammatory Bowel Disease (IBD): Crohn's disease and ulcerative colitis management
+  \item Celiac disease diagnosis and dietary counseling
+  \item Diverticular disease management
+  \item Liver disease: NAFLD/MASLD, MASH, hepatitis B and C, cirrhosis monitoring
+  \item Colorectal cancer screening: risk stratification, education, and referral coordination
+  \item \textit{H.~pylori} testing (urea breath test) and eradication therapy
+  \item GI nutritional counseling and therapeutic elimination diets
+  \item Chronic constipation and motility disorder management
+  \item Telehealth follow-up visits --- available to all patients
+  \item Referral coordination to endoscopy centers, colorectal surgery, and hepatology
+\end{itemize}
+
+\textit{Endoscopy procedures will be referred to a partnering endoscopy center in Years 1--2. The physician partner will evaluate in-house endoscopy services in Year~3.}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Market Analysis}
+% ══════════════════════════════════════════════════════════════════════
+
+\subsection{Market Overview}
+
+Montgomery County, Maryland is the most populous county in Maryland with over \textbf{1.06 million residents} and a median household income exceeding \textbf{\$115,000} --- one of the highest of any county in the United States. The Olney submarket sits at the geographic center of the county along the Georgia Avenue corridor, with approximately 35,000 residents skewing toward middle-aged and older adults --- the highest utilizers of gastroenterology specialty services. There is currently \textbf{no independent GI practice with a primary Olney address}.
+
+\subsection{Demand Drivers}
+
+\begin{itemize}
+  \item \textbf{GI specialist shortage:} Average new patient wait times of 4--6 weeks at hospital-affiliated practices in the county
+  \item \textbf{Expanded screening eligibility:} USPSTF lowered colorectal cancer screening age to 45 in 2021, significantly expanding the eligible patient population
+  \item \textbf{Aging population:} Montgomery County's 65+ population is growing rapidly; GI conditions are among the top reasons seniors seek specialty care
+  \item \textbf{Affluent demographics:} One of the top U.S. markets for concierge medicine adoption
+  \item \textbf{Underserved local market:} No independent GI practice serves Olney as a primary location
+\end{itemize}
+
+\subsection{Competitive Advantage}
+
+\begin{itemize}
+  \item Only GI practice with a primary Olney location --- zero direct competition in immediate market
+  \item Concierge members receive same-day/next-day appointments --- impossible to replicate at hospital-system scale
+  \item 45--60 minute visits vs.\ industry-standard 15 minutes --- dramatically superior patient experience
+  \item Direct provider messaging --- a benefit unavailable at any competing local practice
+  \item Commercial insurance accepted (Month~6+) --- accessible to the full insured population
+\end{itemize}
+
+\subsection{Patient Volume Projections}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\bfseries}l|X|X|}
+\hline
+\thead{Year} & \thead{Concierge Members (End of Year)} & \thead{Insurance Visits/Month (from Mo.\ 6)} \\
+\hline
+\trow Year 1 & 60 members & 30 visits/month \\
+Year 2 & 140 members & 100 visits/month \\
+\trow Year 3 & 220 members & 160 visits/month \\
+Year 4 & 280 members & 200 visits/month \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Management \& Staffing}
+% ══════════════════════════════════════════════════════════════════════
+
+\subsection{Owner \& Clinical Director}
+
+\textbf{[Owner Name], MSN, APRN, FNP-C} --- Owner, Managing Member, and Primary Provider
+
+\begin{itemize}
+  \item Maryland NP License \#: [Number] --- Active, unrestricted
+  \item DEA License \#: [Number] --- Active
+  \item Board Certified by: [AANPCB or ANCC]
+  \item [X] years of clinical experience in gastroenterology or related specialty
+  \item Prior experience: [e.g., GI outpatient clinic, hospital gastroenterology unit]
+  \item Member: American Association of Nurse Practitioners (AANP); Society of Gastroenterology Nurses and Associates (SGNA)
+\end{itemize}
+
+\subsection{Physician Partner \& Statutory Mentor}
+
+\textbf{Dr.~[Physician Name], MD/DO} --- Physician Associate and Required 18-Month Statutory Mentor
+
+\begin{itemize}
+  \item Board Certified in [Gastroenterology / Internal Medicine]
+  \item Maryland Medical License \#: [Number] --- Active, unrestricted
+  \item [X] years of GI clinical experience
+  \item Serves as required statutory mentor under Maryland NP Full Practice Authority Act for 18 months from practice opening
+  \item Responsibilities: Complex case consultation; commercial insurance billing under own NPI; endoscopy referral relationships; Year~3+ endoscopy provision
+  \item Year~1 compensation: \$215,000 salary + benefits
+\end{itemize}
+
+\subsection{Care Coordinator}
+
+\textbf{Care Coordinator / Front Desk} (1.0 FTE, hired prior to opening)
+
+\begin{itemize}
+  \item Responsibilities: Concierge member onboarding and retention; scheduling; insurance verification; coordination with outsourced billing service
+  \item Required: 2+ years healthcare administration; concierge or specialty practice experience preferred
+  \item Year~1 compensation: \$48,000 + benefits
+\end{itemize}
+
+\subsection{Staffing \& Compensation Summary}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\bfseries\small}p{3.6cm}|>{\small}p{1.1cm}|>{\small}p{2.2cm}|>{\small}X|}
+\hline
+\thead{Position} & \thead{FTE} & \thead{Year 1 Comp.} & \thead{Key Notes} \\
+\hline
+\trow NP Owner / Clinical Director & 1.0 & \$80K draw & Increases with practice growth \\
+Physician Partner \& Mentor & 1.0 & \$215K salary & 18-mo statutory mentor; insurance billing under own NPI \\
+\trow Care Coordinator & 1.0 & \$48K salary & Concierge onboarding + scheduling \\
+Outsourced Billing & N/A & 7\% of collections & No in-house billing FTE needed in Yr 1--2 \\
+\hline
+\ttotalrow \textbf{Total Year 1 Personnel} & & \textbf{\$343K} & Plus \textasciitilde15--18\% benefits/payroll taxes \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Operations Plan}
+% ══════════════════════════════════════════════════════════════════════
+
+\subsection{Facility}
+
+The practice will lease \textbf{1,200--1,600 square feet} of medical office space in Olney, Maryland. Target buildings include medical office properties on Georgia Avenue (MD-97), Prince Phillip Drive, and Route~108. A lease term of 3--5 years with renewal option and a tenant improvement (TI) allowance will be negotiated. Office design will reflect the premium concierge experience: a welcoming reception area, 2--3 fully equipped exam rooms, a provider office, a telehealth consultation room, and staff workspace.
+
+\subsection{Technology Stack}
+
+\begin{itemize}
+  \item \textbf{Concierge Platform:} Hint Health or Elation Health --- membership billing, member portal, direct messaging, recurring payment collection
+  \item \textbf{EHR System:} athenahealth, AdvancedMD, or Modernizing Medicine (GI-optimized)
+  \item \textbf{Telehealth:} Integrated HIPAA-compliant video visit module within EHR
+  \item \textbf{Patient Portal:} Online scheduling, lab results, secure messaging (all patients)
+  \item \textbf{Outsourced Billing:} EHR connected to billing service via clearinghouse
+\end{itemize}
+
+\subsection{Revenue Activation Timeline}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\bfseries\small}p{2.0cm}|>{\small}p{3.2cm}|>{\small}X|>{\small}p{2.4cm}|}
+\hline
+\thead{Timeframe} & \thead{Revenue Streams Active} & \thead{Key Actions} & \thead{Est.\ Monthly Revenue} \\
+\hline
+\trow Month 1 & Concierge memberships only & Enroll founding members; submit credentialing applications & \$7,000--\$12,000 \\
+Months 2--5 & Concierge + self-pay visits & Continue member enrollment; credentialing in process & \$10,000--\$20,000 \\
+\trow Month 6+ & Concierge + commercial insurance & Insurance billing begins; grow insured panel & \$35,000--\$60,000 \\
+Year 2+ & Full hybrid --- all streams & Scale all revenue; add staff as needed & \$60,000--\$140,000 \\
+\hline
+\end{tabularx}
+
+\subsection{Commercial Insurance Credentialing}
+
+Credentialing applications will be submitted to all major commercial payers simultaneously in Month~1, targeting activation by Month~6. Target payers: \textbf{CareFirst BlueCross BlueShield of Maryland} (priority), Aetna, United Healthcare, Cigna, and the Federal Employee Program (GEHA). A CAQH ProView profile will be maintained for both providers. A credentialing specialist will be engaged on contract.
+
+\subsection{Pre-Opening Milestones}
+
+\begin{itemize}
+  \item \textbf{Month -3:} Form LLC; obtain EIN; retain healthcare attorney; begin physician contract negotiations
+  \item \textbf{Month -2:} Sign office lease; begin buildout; submit credentialing applications; order equipment
+  \item \textbf{Month -1:} Install EHR and concierge platform; hire and train Care Coordinator; launch website and founding member campaign; begin PCP outreach
+  \item \textbf{Month 1 (Opening):} First concierge patient appointments; founding member enrollment drive; self-pay patients accepted
+  \item \textbf{Month 4--6:} Commercial insurance contracts activate; begin billing insured patients
+  \item \textbf{Month 6+:} Full hybrid operations running
+\end{itemize}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Financial Plan}
+% ══════════════════════════════════════════════════════════════════════
+
+\subsection{Startup Cost Summary}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\small}X|>{\small}r|}
+\hline
+\thead{Startup Cost Item} & \thead{Estimated Amount} \\
+\hline
+\trow Office Lease --- First + Last Month + Security Deposit & \$18,000 \\
+Office Buildout / Tenant Improvements & \$45,000 \\
+\trow Medical Equipment (exam tables, point-of-care devices) & \$30,000 \\
+Concierge Platform --- Setup + Year 1 License & \$5,000 \\
+\trow EHR Software --- Setup + Year 1 License & \$12,000 \\
+Insurance Credentialing Service & \$3,500 \\
+\trow Office Furniture \& Fixtures & \$10,000 \\
+Legal Fees (LLC, physician contract, membership agreement) & \$8,500 \\
+\trow Malpractice Insurance --- Year 1 Premium & \$22,000 \\
+Marketing: Website, Branding, Founding Member Campaign & \$15,000 \\
+\trow Working Capital Reserve (12-month operating buffer) & \$225,000 \\
+Miscellaneous / Contingency (10\%) & \$39,400 \\
+\hline
+\ttotalrow \textbf{TOTAL STARTUP COSTS} & \textbf{\$433,400} \\
+\hline
+\end{tabularx}
+
+\medskip
+Total startup funding required: \$433,400. The owner will contribute \textbf{\$0 in personal equity} (0\%), and is requesting an \textbf{SBA 7(a) loan of \$493,400} to cover the full startup costs and a 12-month operating reserve.
+
+\subsection{SBA 7(a) Loan Request Details}
+
+\begin{itemize}
+  \item \textbf{Loan Amount:} \$493,400
+  \item \textbf{Program:} SBA 7(a)
+  \item \textbf{Proposed Term:} 10 years
+  \item \textbf{Estimated Monthly Payment:} \textasciitilde\$6,384/month at 9.5\% interest
+  \item \textbf{Annual Debt Service:} \textasciitilde\$76,614
+  \item \textbf{Owner Equity Contribution:} \$0 (0\%)
+  \item \textbf{Collateral:} Personal guarantee; business equipment and assets
+\end{itemize}
+
+\subsection{Four-Year Revenue Projections}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\small}X|>{\small}r|>{\small}r|>{\small}r|>{\small}r|}
+\hline
+\thead{Revenue Stream} & \thead{Year 1} & \thead{Year 2} & \thead{Year 3} & \thead{Year 4} \\
+\hline
+\multicolumn{5}{|l|}{\theadsub{CONCIERGE MEMBERSHIP REVENUE}} \\
+\hline
+\trow Concierge Members (end of year) & 60 & 140 & 220 & 280 \\
+Avg.\ Members Active During Year & 35 & 100 & 180 & 260 \\
+\trow Annual Membership Fee/Member & \$2,160* & \$2,400 & \$2,400 & \$2,400 \\
+\textbf{Membership Revenue} & \textbf{\$75,600} & \textbf{\$240,000} & \textbf{\$432,000} & \textbf{\$624,000} \\
+\hline
+\multicolumn{5}{|l|}{\theadsub{COMMERCIAL INSURANCE REVENUE (starts Month 6)}} \\
+\hline
+\trow Insurance Visits/Month & 30 & 100 & 160 & 200 \\
+Avg.\ Reimbursement/Visit & \$220 & \$225 & \$230 & \$235 \\
+\trow \textbf{Insurance Revenue} & \textbf{\$39,600} & \textbf{\$270,000} & \textbf{\$441,600} & \textbf{\$564,000} \\
+\hline
+\multicolumn{5}{|l|}{\theadsub{MEMBER VISIT INSURANCE REVENUE}} \\
+\hline
+\trow Member Visits Billed/Month & 35 & 80 & 130 & 165 \\
+Avg.\ Reimbursement/Visit & \$220 & \$225 & \$230 & \$235 \\
+\trow \textbf{Member Visit Revenue} & \textbf{\$46,200} & \textbf{\$216,000} & \textbf{\$358,800} & \textbf{\$465,300} \\
+\hline
+\ttotalrow \textbf{TOTAL GROSS REVENUE} & \textbf{\$161,400} & \textbf{\$726,000} & \textbf{\$1,232,400} & \textbf{\$1,653,300} \\
+\hline
+\end{tabularx}
+
+\vspace{4pt}
+\textit{\small *Year 1 reflects founding member rate of \$1,800/year for first cohort.}
+
+\subsection{Four-Year Profit \& Loss Summary}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\small}X|>{\small}r|>{\small}r|>{\small}r|>{\small}r|}
+\hline
+\thead{Item} & \thead{Year 1} & \thead{Year 2} & \thead{Year 3} & \thead{Year 4} \\
+\hline
+\trow \textbf{Total Gross Revenue} & \$161,400 & \$726,000 & \$1,232,400 & \$1,653,300 \\
+\hline
+\multicolumn{5}{|l|}{\theadsub{OPERATING EXPENSES}} \\
+\hline
+Office Rent & \$60,000 & \$62,000 & \$63,500 & \$65,000 \\
+\trow Physician Salary + Benefits & \$215,000 & \$225,000 & \$240,000 & \$255,000 \\
+NP Owner Draw & \$80,000 & \$130,000 & \$180,000 & \$220,000 \\
+\trow Care Coordinator Salary & \$48,000 & \$50,000 & \$52,000 & \$54,000 \\
+Medical Billing (outsourced, 7\%) & \$5,992 & \$33,474 & \$56,030 & \$71,981 \\
+\trow Malpractice Insurance & \$22,000 & \$22,000 & \$22,000 & \$22,000 \\
+EHR + Concierge Platform + Tech & \$20,000 & \$20,000 & \$20,000 & \$20,000 \\
+\trow Marketing \& Member Acquisition & \$18,000 & \$12,000 & \$10,000 & \$10,000 \\
+Supplies \& Misc.\ Operating & \$14,000 & \$16,000 & \$18,000 & \$20,000 \\
+\trow SBA Loan Repayment & \$76,614 & \$76,614 & \$76,614 & \$76,614 \\
+\hline
+\ttotalrow \textbf{Total Expenses} & \textbf{\$559,602} & \textbf{\$647,084} & \textbf{\$738,140} & \textbf{\$814,591} \\
+\hline
+\ttotalrow \textbf{NET INCOME / (LOSS)} & \textbf{(\$398,202)} & \textbf{\$78,916} & \textbf{\$494,260} & \textbf{\$838,709} \\
+\hline
+\end{tabularx}
+
+\medskip
+Year~1 net loss reflects the standard new-practice ramp-up pattern. The concierge model significantly reduces this loss compared to a traditional insurance-only practice. By Year~2 the practice is profitable, and Years~3--4 generate strong and accelerating net income.
+
+\subsection{Break-Even Analysis}
+
+\begin{itemize}
+  \item Total fixed monthly operating costs: \textasciitilde\$47,160/month (includes increased loan payment)
+  \item Daily patients needed to break even (Year 2): \textbf{6--7 patients/day}
+  \item At full capacity (Year 3--4): 12--18 patients/day across two providers
+  \item Break-even with concierge + insurance: \textasciitilde110 concierge members + 100 insurance visits/month
+  \item \textbf{Projected break-even: Month 18--22 (Year~2)}
+\end{itemize}
+
+\subsection{Owner Compensation Schedule}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\bfseries}l|r|r|}
+\hline
+\thead{Year} & \thead{Annual Owner Draw} & \thead{Monthly Take-Home} \\
+\hline
+\trow Year 1 & \$80,000 & \$6,667 \\
+Year 2 & \$130,000 & \$10,833 \\
+\trow Year 3 & \$180,000 & \$15,000 \\
+Year 4 & \$220,000 & \$18,333 \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Risk Analysis \& Mitigation}
+% ══════════════════════════════════════════════════════════════════════
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\small}p{3.2cm}|>{\small}p{1.6cm}|>{\small}X|}
+\hline
+\thead{Risk} & \thead{Level} & \thead{Mitigation Strategy} \\
+\hline
+\trow Slow concierge enrollment in Months 1--3 & Medium & Pre-opening founding member campaign; \$1,800/yr founding rate; PCP outreach begins 60 days before opening \\
+Commercial insurance credentialing exceeds 6 months & Low--Med & Engage credentialing specialist from Day~1; 12-month working capital reserve covers extended gap \\
+\trow Double-billing compliance risk & Low & Healthcare attorney drafts membership agreement defining membership as non-covered ``access and coordination'' benefits \\
+Physician partner departure & Low & NP has full Maryland practice authority; physician contract includes 90-day notice, non-compete, non-solicitation \\
+\trow Insurance reimbursement rate reductions & Low--Med & Concierge membership revenue completely insulated from insurance rate changes \\
+Competition from hospital-affiliated GI practices & Medium & Concierge model offers same-day access and 45--60~min visits that hospital systems cannot match \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Marketing Plan}
+% ══════════════════════════════════════════════════════════════════════
+
+\subsection{Pre-Opening: Founding Member Campaign}
+
+Target: \textbf{30--50 founding members before Day~1} generating \$4,500--\$7,500 in recurring monthly revenue immediately.
+
+\begin{itemize}
+  \item Launch website with online concierge enrollment 60 days before opening
+  \item Founding Member pricing: \textbf{\$1,800/year} (25\% discount vs.\ standard) --- creates urgency
+  \item Targeted Facebook and Instagram ads to Olney, Sandy Spring, Ashton, and Rockville zip codes (ages 35--65, HHI \$80K+)
+  \item Nextdoor community posts --- highly effective in Olney's community-oriented neighborhoods
+  \item Personal outreach to PCPs in Olney and surrounding areas
+\end{itemize}
+
+\subsection{Referral Network Development}
+
+\begin{itemize}
+  \item \textbf{Target:} 30--40 PCP relationships established in Months 1--6 across Olney, Gaithersburg, Rockville, and Silver Spring
+  \item Monthly lunch-and-learn visits to PCP offices; referral pads distributed to all referring providers
+  \item Prompt consultation reports returned to PCPs within 24--48 hours --- builds referral loyalty
+  \item Urgent care centers in the Olney area as a steady pipeline for acute GI complaints
+\end{itemize}
+
+\subsection{Digital Presence}
+
+\begin{itemize}
+  \item Professional website with two clear pathways: ``Join as a Concierge Member'' and ``Book an Appointment (Insurance Accepted)''
+  \item Google Business Profile optimized for: \textit{GI doctor Olney MD}, \textit{gastroenterologist near me Olney}, \textit{concierge GI Maryland}
+  \item Healthgrades, Zocdoc, and Doximity profiles for both providers
+  \item Monthly concierge member e-newsletter: GI wellness tips, practice updates --- drives retention and word-of-mouth referrals
+\end{itemize}
+
+\subsection{Marketing Budget}
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{|>{\small}l|>{\small}r|>{\small}X|}
+\hline
+\thead{Period} & \thead{Budget} & \thead{Primary Activities} \\
+\hline
+\trow Pre-opening (Months -2 to 0) & \$8,000 & Website, branding, founding member digital campaign, referral materials \\
+Year 1 ongoing & \$10,000 & Google Ads, PCP outreach, community events \\
+\trow Year 2+ & \$8,000--\$10,000/yr & Retention marketing, member referral program, continued PCP outreach \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Appendices}
+% ══════════════════════════════════════════════════════════════════════
+
+The following supporting documents are attached to this business plan as part of the SBA 7(a) loan application:
+
+\begin{itemize}
+  \item[\textbf{A.}] Owner Resume / Curriculum Vitae --- [Your Name], MSN, APRN
+  \item[\textbf{B.}] Maryland Nurse Practitioner License (current, unrestricted)
+  \item[\textbf{C.}] DEA Registration Certificate (current)
+  \item[\textbf{D.}] Board Certification Certificate
+  \item[\textbf{E.}] Physician Partner Letter of Intent / Draft Agreement --- Dr.~[Name]
+  \item[\textbf{F.}] SBA Personal Financial Statement --- Form 413 (Owner)
+  \item[\textbf{G.}] Personal Federal Tax Returns --- 3 Most Recent Years
+  \item[\textbf{H.}] Letter of Intent / Draft Lease --- Office Space, Olney MD
+  \item[\textbf{I.}] Month-by-Month Cash Flow Projections --- Years 1 and 2
+  \item[\textbf{J.}] Sample Concierge Membership Agreement (reviewed by healthcare attorney)
+  \item[\textbf{K.}] Healthcare Attorney Compliance Memo --- Dual Billing Structure
+  \item[\textbf{L.}] Personal Credit Report Authorization
+  \item[\textbf{M.}] Articles of Organization --- Olney GI Associates, LLC (upon formation)
+  \item[\textbf{N.}] Letters of Referral Intent from PCP Partners (if available at time of application)
+  \item[\textbf{O.}] Vendor Quotes --- EHR System, Concierge Platform, Medical Equipment
+  \item[\textbf{P.}] Loan Amortization Schedule --- 10-Year Term, 9.5\% Interest Rate
+\end{itemize}
+
+\medskip
+
+\vspace{1.0cm}
+
+\begin{center}
+\begin{tabular}{|c|r|r|r|r|r|}
+\hline
+\thead{Year} & \thead{Beginning} & \thead{Principal} & \thead{Interest} & \thead{Total} & \thead{Ending} \\
+ & \thead{Balance} & \thead{Payment} & \thead{Payment} & \thead{Payment} & \thead{Balance} \\
+\hline
+1 & \$493,400 & \$31,070 & \$45,543 & \$76,614 & \$462,330 \\
+2 & \$462,330 & \$34,154 & \$42,460 & \$76,614 & \$428,175 \\
+3 & \$428,175 & \$37,544 & \$39,070 & \$76,614 & \$390,632 \\
+4 & \$390,632 & \$41,270 & \$35,344 & \$76,614 & \$349,362 \\
+5 & \$349,362 & \$45,366 & \$31,248 & \$76,614 & \$303,996 \\
+6 & \$303,996 & \$49,868 & \$26,745 & \$76,614 & \$254,127 \\
+7 & \$254,127 & \$54,818 & \$21,796 & \$76,614 & \$199,310 \\
+8 & \$199,310 & \$60,258 & \$16,355 & \$76,614 & \$139,051 \\
+9 & \$139,051 & \$66,239 & \$10,375 & \$76,614 & \$72,813 \\
+10 & \$72,813 & \$72,813 & \$3,801 & \$76,614 & \$0 \\
+\hline
+\end{tabular}
+\end{center}
+
+Total Interest Paid: \$272,737
+
+\vspace{1.8cm}
+\noindent{\color{teal}\rule{\linewidth}{0.6pt}}
+
+\medskip
+\textit{\small This business plan has been prepared in good faith by the practice owner and is based on industry benchmarks, published GI practice data from the American Gastroenterological Association and MGMA, and reasonable financial assumptions specific to the Olney, Maryland market. Actual results may differ from projections. The concierge membership and dual-billing structure described herein is a widely practiced and legally sound model that will be implemented under the guidance of qualified healthcare legal counsel.}
+
+\vspace{2cm}
+
+\noindent
+\begin{tabular}{@{}p{8cm}p{0.5cm}p{5cm}@{}}
+Owner Signature: \underline{\hspace{6cm}} & & Date: \underline{\hspace{3.5cm}} \\[20pt]
+Printed Name: {[Your Full Name], MSN, APRN} & & \\[14pt]
+Title: Owner \& Clinical Director, Olney GI Associates, LLC & & \\
+\end{tabular}
+
+\end{document}
