@@ -14,6 +14,7 @@ pdf: $(PDF_OUTPUT)
 
 $(PDF_OUTPUT): $(MAIN).tex
 	pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
+	# second pass for toc
 	pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
 
 # HTML generation using htlatex

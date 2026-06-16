@@ -8,3 +8,9 @@
 *.tmp
 *.toc
 *.xref
+*.html
+*.css
+*.svg
+*.idv
+*.lg
+*.4ct
